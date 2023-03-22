@@ -11,29 +11,30 @@
 	<div class="container mt-3">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
-				<h1 class="text-center mb-3">Fill the product detail</h1>
-				<form action="handle-product" method="post">
-					
+				<h1 class="text-center mb-3">Change product details</h1>
+				<form action="<%= request.getContextPath() %>/update-submit" method="post">
+					<input type="hidden" name=pid value="${product.pid}" />
 					<div class="form-group">
-				
 						<label for="name">Product Name</label> <input type="text"
 							class="form-control" id="name" aria-describedby="emailHelp"
-							name="name" placeholder="Enter the product name here">
+							value="${product.name}" name="name"
+							placeholder="Enter the product name here">
 					</div>
 					<div class="form-group">
 						<label for="description">Product Description</label>
 						<textarea class="form-control" name="description" id="description"
-							rows="5" placeholder="Enter the product description"></textarea>
+							rows="5" placeholder="Enter the product description">${product.description}</textarea>
 					</div>
 					<div class="form-group">
 						<label for="price">Product Price</label> <input type="text"
 							placeholder="Enter Product Price" name="price"
-							class="form-control" id="price">
+							value="${product.price}" class="form-control" id="price">
 					</div>
 					<div class="container text-center">
-						<a href="<%= request.getContextPath()+"/" %>/"
+						<a href="<%=request.getContextPath() + "/"%>/"
 							class="btn btn-outline-danger text-danger">Back</a>
-						<button type="submit" class="btn btn-outline-success text-white">Add</button>
+						<button type="submit"
+							class="btn btn-outline-success text-white">Add</button>
 					</div>
 				</form>
 			</div>

@@ -47,5 +47,10 @@ public class ProductDao {
 
 		return this.template.get(Product.class, pid);
 	}
+	@Transactional
+	public void updateProduct(Product p) {
+		
+		this.template.update(p);
+	}
 
 }

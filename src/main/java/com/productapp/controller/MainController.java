@@ -52,4 +52,22 @@ public class MainController {
 		rv.setUrl(request.getContextPath() + "/");
 		return rv;
 	}
+	
+	
+	@RequestMapping("/update/{pid}")
+	public String updateProduct(@PathVariable("pid") int pid, Model m) {
+		Product product=this.productDao.getProduct(pid);
+		m.addAttribute(product);
+		return "update_form";
+	}
+	
+	@RequestMapping(path="/update-submit" ,method = RequestMethod.POST )
+	public RedirectView updateSubmit(@ModelAttribute("product") Product p , HttpServletRequest request)
+	{
+		this.productDao.updateProduct(p);
+		RedirectView rv = new RedirectView();
+		rv.setUrl(request.getContextPath() + "/");
+		return rv;
+		
+	}
 }

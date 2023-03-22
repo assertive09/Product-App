@@ -61,14 +61,14 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 
 		<!-- annotated classes -->
 		<property name="annotatedClasses">
 			<list>
-				<value>com.springmvc.model.User</value>
+				<value>com.productapp.model.Product</value>
 			</list>
 		</property>
 
